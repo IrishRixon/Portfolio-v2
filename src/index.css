@@ -1,6 +1,26 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+@font-face {
+  font-family: "sora";
+  src: url('public/fonts/sora.ttf');
+}
+
+@font-face {
+  font-family: "inter";
+  src: url('public/fonts/inter.ttf');
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "sora";
+  color: var(--text-primary);
+}
+
+p {
+  font-family: "inter";
+  color: var(--text-secondary);
+}
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
@@ -77,6 +97,20 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+
+  /*Custom*/
+  --bg-main: #070b1a;
+  --bg-surface: #0b1024;
+  --bg-elevated: #111a3a;
+
+  --text-primary: #e6f1ff;   /* Headings to c9dbf8 */
+  --text-secondary: #a9b7d0; /* Paragraphs  8fa1c3 */
+  --text-muted: #6c7aa0;    /* Captions 5b678a */
+
+  --accent-primary: #3fffd8; /* CTA / highlights #15bfa5  */
+  --accent-secondary: #1e5fa3; /* Links / subtle accents 173f7a*/
+
+
 }
 
 .dark {

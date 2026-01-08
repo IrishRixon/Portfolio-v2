@@ -4,6 +4,7 @@ import viteLogo from "/vite.svg";
 import "./App.css";
 import { Button } from "@/components/ui/button";
 import FloatingLines from "./components/FloatingLines";
+import Navigation from "./components/Navigation/Navigation";
 
 function App() {
   return (
@@ -23,8 +24,11 @@ function App() {
             animationSpeed={0.7}
           />
 
-          <div className="absolute top-0 h-full w-full">
-            
+          <div className="absolute top-0 h-full w-full px-24 flex flex-col">
+            <Navigation />
+            <div className="grow">
+
+            </div>
           </div>
         </div>
       </div>
