@@ -13,7 +13,7 @@ function Navigation() {
     <div className="h-16 w-full flex justify-between sticky">
       <h1 className="text-xl text-center flex items-center">Portfolio <span className="text-(--accent-primary)">&lt;/&gt;</span></h1>
 
-      <NavigationMenu className="flex items-center">
+      <NavigationMenu className="flex items-center font-[sora]">
         <NavigationMenuList className="flex text-(--text-primary)">
         <NavigationMenuItem>
           <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
