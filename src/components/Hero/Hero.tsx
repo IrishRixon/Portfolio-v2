@@ -1,10 +1,11 @@
 import React from "react";
 import RotatingText from "../RotatingText";
 
+
 function Hero() {
   return (
     <div className="h-full w-full flex">
-      <section className="flex flex-col justify-center">
+      <section className="flex flex-col justify-center w-1/2">
         <h1 className="text-5xl font-semibold">Hello, I'm Irish Rixon</h1>
         <h2 className="text-2xl mt-4 text-(--text-secondary)!">
           A Full Stack Web developer
@@ -27,6 +28,12 @@ function Hero() {
         </div>
 
         <p className="text-lg mt-4">I build web experiences that matter.</p>
+      </section>
+
+      <section className="w-1/2 flex justify-center items-center">
+        <div className="h-[450px] w-auto bg-[#ffffff0a] backdrop-blur-sm border border-[#3fffd826] rounded-2xl overflow-hidden shadow-2xl/50 shadow-[0_20px_60px_rgba(0,0,0,0.45)] ring-1 ring-[#3fffd81a]">
+            <img className="h-full object-cover" src="\images\photo.webp" alt="my photo" />
+        </div>
       </section>
     </div>
   );

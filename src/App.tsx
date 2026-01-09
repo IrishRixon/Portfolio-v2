@@ -40,23 +40,3 @@ function App() {
 }
 
 export default App;
-
-{
-  /* 
-              <div className="flex gap-2 items-center">
-                <h1 className="flex items-center text-6xl font-bold">From</h1>
-                <RotatingText
-                  texts={["coding", "components!", "thinking"]}
-                  mainClassName="px-2 sm:px-2 md:px-3 bg-cyan-300 text-black overflow-hidden py-0.5 sm:py-1 md:py-2 justify-center rounded-lg text-6xl font-bold"
-                  staggerFrom={"first"}
-                  initial={{ y: "100%" }}
-                  animate={{ y: 0 }}
-                  exit={{ y: "-120%" }}
-                  staggerDuration={0.025}
-                  splitLevelClassName="overflow-hidden pb-0.5 sm:pb-1 md:pb-1"
-                  transition={{ type: "spring", damping: 30, stiffness: 500 }}
-                  rotationInterval={2000}
-                />
-              </div>
-             */
-}
