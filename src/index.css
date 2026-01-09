@@ -3,12 +3,12 @@
 
 @font-face {
   font-family: "sora";
-  src: url('public/fonts/sora.ttf');
+  src: url('/fonts/sora.ttf');
 }
 
 @font-face {
   font-family: "inter";
-  src: url('public/fonts/inter.ttf');
+  src: url('/fonts/inter.ttf');
 }
 
 h1, h2, h3, h4, h5, h6 {
