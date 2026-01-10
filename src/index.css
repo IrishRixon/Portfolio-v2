@@ -110,6 +110,9 @@ p {
   --accent-primary: #3fffd8; /* CTA / highlights #15bfa5  */
   --accent-secondary: #1e5fa3; /* Links / subtle accents 173f7a*/
 
+  --card-border: #3fffd826;
+  --card-bg: #ffffff0a;
+  --card-ring: #3fffd81a;
 
 }
 

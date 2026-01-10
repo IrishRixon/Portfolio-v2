@@ -7,10 +7,16 @@ import {
   NavigationMenuTrigger,
 } from "@radix-ui/react-navigation-menu";
 import { navigationMenuTriggerStyle } from "../ui/navigation-menu";
+import { useEffect, useState } from "react";
 
-function Navigation() {
+interface Props {
+  addClass: string;
+}
+
+function Navigation({addClass}: Props) {
+
   return (
-    <div className="h-16 w-full flex justify-between sticky">
+    <div className={`h-16 w-full flex justify-between px-24 ${addClass}`}>
       <h1 className="text-xl text-center flex items-center">Portfolio <span className="text-(--accent-primary)">&lt;/&gt;</span></h1>
 
       <NavigationMenu className="flex items-center font-[sora]">
