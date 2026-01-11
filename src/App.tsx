@@ -17,6 +17,7 @@ import Tools from "./components/Tools/Tools";
 import { ReactLenis, useLenis } from "lenis/react";
 import type { LenisRef } from "lenis/react";
 import { cancelFrame, frame } from "framer-motion";
+import Project from "./components/Project/Project";
 
 function App() {
   const scrollRef = useRef<HTMLElement | null>(null);
@@ -94,20 +95,24 @@ function App() {
                 </div>
               </section>
 
-              <section className="h-screen w-full mt-24">
+              <section className="h-screen w-full mt-8">
                 <Backend />
               </section>
 
-              <section className="h-screen w-full mt-24">
+              <section className="h-screen w-full mt-8">
                 <MobileDev />
               </section>
 
-              <section className="h-screen w-full mt-24">
+              <section className="h-screen w-full mt-8">
                 <Tools />
               </section>
 
-              <section className="h-screen w-full mt-24">
+              <section className="h-screen w-full mt-8">
                 <Iot />
+              </section>
+
+              <section className="minus-nav-height w-full mt-24">
+                <Project />
               </section>
             </article>
           </main>
