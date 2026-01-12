@@ -18,9 +18,9 @@ import { ReactLenis, useLenis } from "lenis/react";
 import type { LenisRef } from "lenis/react";
 import { cancelFrame, frame } from "framer-motion";
 import Project from "./components/Project/Project";
+import Contact from "./components/Contact/Contact";
 
 function App() {
-  const scrollRef = useRef<HTMLElement | null>(null);
   const [scrolled, setScrolled] = useState(false);
   const lenisRef = useRef<LenisRef>(null);
 
@@ -113,6 +113,22 @@ function App() {
 
               <section className="minus-nav-height w-full mt-24">
                 <Project />
+              </section>
+
+              <section className="w-full mt-24">
+                <div className="flex flex-col">
+                  <h1 className="text-4xl font-medium text-center">
+                    Let's Build Something Meaningful Together
+                  </h1>
+                  <p className="text-lg text-center mt-2">
+                    If you're looking for someone who's hungry to grow and
+                    serious about building, let's talk.
+                  </p>
+                </div>
+
+                <div className="h-screen w-full flex mt-8">
+                  <Contact />
+                </div>
               </section>
             </article>
           </main>
