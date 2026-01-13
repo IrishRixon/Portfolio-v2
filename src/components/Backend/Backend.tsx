@@ -1,139 +1,42 @@
 import React from "react";
+import SkillGroup from "../Frontend/SkillGroup";
+import Skill from "../Frontend/Skill";
 
 function Backend() {
   return (
-    <div className="h-full w-full flex">
-      <section className="w-1/2 h-full">
-        <h2 className="text-3xl text-center sticky top-18 mt-16">Backend Development</h2>
+    <div className="h-full w-full flex flex-col lg:flex-row gap-8">
+      <section className="w-full lg:w-1/2 h-full flex justify-center lg:justify-start">
+        <h2 className="text-2xl sm:text-3xl lg:text-left lg:sticky text-center sticky lg:top-18 lg:mt-16">
+          Backend Development
+        </h2>
       </section>
 
-      <section className="w-1/2 h-full p-8 rounded-2xl bg-(--card-bg) border border-(--card-border) shadow-2xl/50 shadow-[0_20px_60px_rgba(0,0,0,0.45)] ring-1 ring-(--card-ring) flex flex-col gap-8">
-        <div className="flex flex-col gap-2">
-          <h2>Languages & Runtime</h2>
-          <ul className="flex flex-wrap w-full gap-4 text-(--text-primary)">
-            <li className="flex items-center p-2.5 rounded-xl gap-2.5 px-5 shadow-2xl backdrop-blur-2xl">
-              <img
-                className="h-[40px] w-[40px] object-contain"
-                src="\logos\nodejs.png"
-                alt="nodejs logo"
-              />
-              <p className="text-lg">Node.js</p>
-            </li>
+      <section className="w-full lg:w-1/2 p-4 sm:p-6 md:p-8 rounded-2xl bg-(--card-bg) border border-(--card-border) shadow-2xl ring-1 ring-(--card-ring) flex flex-col gap-8">
+        <SkillGroup title="Languages & Runtime">
+          <Skill icon="/logos/nodejs.png" label="Node.js" />
+          <Skill icon="/logos/php.png" label="PHP" />
+        </SkillGroup>
 
-            <li className="flex items-center p-2.5 rounded-xl gap-2.5 px-5 shadow-2xl backdrop-blur-2xl">
-              <img
-                className="h-[40px] w-[40px] object-contain"
-                src="\logos\php.png"
-                alt="php logo"
-              />
-              <p className="text-lg">PHP</p>
-            </li>
-          </ul>
-        </div>
+        <SkillGroup title="Frameworks & Libraries">
+          <Skill icon="/logos/express.png" label="Express" />
+          <Skill icon="/logos/socket.png" label="Socket.io" />
+        </SkillGroup>
 
-        <div className="flex flex-col gap-2">
-          <h2>Frameworks & Libraries</h2>
-          <ul className="flex flex-wrap w-full gap-4 text-(--text-primary)">
-            <li className="flex items-center p-2.5 rounded-xl gap-2.5 px-5 shadow-2xl backdrop-blur-2xl">
-              <img
-                className="h-[40px] w-[40px] object-contain"
-                src="\logos\express.png"
-                alt="express logo"
-              />
-              <p className="text-lg">Express</p>
-            </li>
+        <SkillGroup title="Databases">
+          <Skill icon="/logos/mongodb.png" label="MongoDB" />
+          <Skill icon="/logos/sqlite.png" label="SQLite3" />
+          <Skill icon="/logos/mysql.png" label="MySQL" />
+        </SkillGroup>
 
-            <li className="flex items-center p-2.5 rounded-xl gap-2.5 px-5 shadow-2xl backdrop-blur-2xl">
-              <img
-                className="h-[40px] w-[40px] object-contain"
-                src="\logos\socket.png"
-                alt="socket logo"
-              />
-              <p className="text-lg">Socket.io</p>
-            </li>
-          </ul>
-        </div>
+        <SkillGroup title="Communication Concepts">
+          <Skill icon="/logos/websocket.png" label="WebSockets" />
+          <Skill icon="/logos/rest.png" label="REST API" />
+        </SkillGroup>
 
-        <div className="flex flex-col gap-2">
-          <h2>Databases</h2>
-
-          <ul className="flex flex-wrap w-full gap-4 text-(--text-primary)">
-            <li className="flex items-center p-2.5 rounded-xl gap-2.5 px-5 shadow-2xl backdrop-blur-2xl">
-              <img
-                className="h-[40px] w-[40px] object-contain"
-                src="\logos\mongodb.png"
-                alt="mongodb logo"
-              />
-              <p className="text-lg">MongoDB</p>
-            </li>
-
-            <li className="flex items-center p-2.5 rounded-xl gap-2.5 px-5 shadow-2xl backdrop-blur-2xl">
-              <img
-                className="h-[40px] w-[40px] object-contain"
-                src="\logos\sqlite.png"
-                alt="sqlite logo"
-              />
-              <p className="text-lg">SQLite3</p>
-            </li>
-
-            <li className="flex items-center p-2.5 rounded-xl gap-2.5 px-5 shadow-2xl backdrop-blur-2xl">
-              <img
-                className="h-[40px] w-[40px] object-contain rounded"
-                src="\logos\mysql.png"
-                alt="mysql logo"
-              />
-              <p className="text-lg">MySql</p>
-            </li>
-          </ul>
-        </div>
-
-        <div className="flex flex-col gap-2">
-          <h2>Communication concepts</h2>
-
-          <ul className="flex flex-wrap w-full gap-4 text-(--text-primary)">
-            <li className="flex items-center p-2.5 rounded-xl gap-2.5 px-5 shadow-2xl backdrop-blur-2xl">
-              <img
-                className="h-[40px] w-[40px] object-contain"
-                src="\logos\websocket.png"
-                alt="websocket logo"
-              />
-              <p className="text-lg">Websockets</p>
-            </li>
-
-            <li className="flex items-center p-2.5 rounded-xl gap-2.5 px-5 shadow-2xl backdrop-blur-2xl">
-              <img
-                className="h-[40px] w-[40px] object-contain"
-                src="\logos\rest.png"
-                alt="rest logo"
-              />
-              <p className="text-lg">REST API</p>
-            </li>
-          </ul>
-        </div>
-
-        <div className="flex flex-col gap-2">
-          <h2>Authentication & Security</h2>
-
-          <ul className="flex flex-wrap w-full gap-4 text-(--text-primary)">
-            <li className="flex items-center p-2.5 rounded-xl gap-2.5 px-5 shadow-2xl backdrop-blur-2xl">
-              <img
-                className="h-[40px] w-[40px] object-contain"
-                src="\logos\jwt.png"
-                alt="jwt logo"
-              />
-              <p className="text-lg">JWT Authentication</p>
-            </li>
-
-            <li className="flex items-center p-2.5 rounded-xl gap-2.5 px-5 shadow-2xl backdrop-blur-2xl">
-              <img
-                className="h-[40px] w-[40px] object-contain"
-                src="\logos\bcrypt.png"
-                alt="bcrypt logo"
-              />
-              <p className="text-lg">Bcrypt Password Hashing</p>
-            </li>
-          </ul>
-        </div>
+        <SkillGroup title="Authentication & Security">
+          <Skill icon="/logos/jwt.png" label="JWT Authentication" />
+          <Skill icon="/logos/bcrypt.png" label="Bcrypt Hashing" />
+        </SkillGroup>
       </section>
     </div>
   );

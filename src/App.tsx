@@ -19,16 +19,34 @@ import type { LenisRef } from "lenis/react";
 import { cancelFrame, frame } from "framer-motion";
 import Project from "./components/Project/Project";
 import Contact from "./components/Contact/Contact";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   const [scrolled, setScrolled] = useState(false);
   const lenisRef = useRef<LenisRef>(null);
+  const heroRef = useRef<HTMLElement>(null);
+  const aboutRef = useRef<HTMLElement>(null);
+  const skillsRef = useRef<HTMLElement>(null);
+  const projectsRef = useRef<HTMLElement>(null);
 
   const lenis = useLenis((lenis) => {
     // called every scroll
-    console.log(lenis);
+    // console.log(lenis);
     setScrolled(lenis.animatedScroll > 90);
   });
+
+  const scrollTo = (
+    ref: React.RefObject<HTMLElement | null>,
+    offset: number
+  ) => {
+    if (!ref.current) return;
+
+    lenisRef.current?.lenis?.scrollTo(ref.current, {
+      offset: offset,
+      duration: 1.2,
+      easing: (t: number) => 1 - Math.pow(1 - t, 3),
+    });
+  };
 
   useEffect(() => {
     function update(data: { timestamp: number }) {
@@ -62,30 +80,44 @@ function App() {
 
           <main className="absolute top-0 right-0 h-dvh w-full">
             <nav className="w-full h-16 fixed top-0 z-20">
-              <Navigation
+              {/* <Navigation
+                onHome={() => scrollTo(heroRef, 0)}
+                onAbout={() => scrollTo(aboutRef, -64)}
+                onSkills={() => scrollTo(skillsRef, -64)}
+                onProjects={() => scrollTo(projectsRef, 20)}
+                onContact={() => scrollTo(projectsRef, -64)}
                 addClass={
                   scrolled
                     ? "bg-[#070b1a]/80 backdrop-blur-md border-b border-white/10"
                     : "bg-transparent"
                 }
-              />
+              /> */}
             </nav>
 
-            <article className="flex flex-col px-24 w-full z-10 absolute top-0">
-              <section className="min-h-screen w-full">
+            <article
+              className="flex flex-col px-4 sm:px-6
+              md:px-10
+              lg:px-16
+              xl:px-24 w-full z-10 absolute top-0"
+            >
+              <section ref={heroRef} className="min-h-screen w-full">
                 <Hero />
               </section>
 
-              <section className="h-screen w-full mt-24">
+              <section ref={aboutRef} className="h-screen w-full mt-24">
                 <AboutMe />
               </section>
 
-              <section className="h-screen w-full mt-24 flex flex-col">
-                <div className="flex flex-col">
-                  <h1 className="text-4xl font-medium text-center">
+              <section
+                ref={skillsRef}
+                className="min-h-screen lg:h-screen w-full mt-16 sm:mt-24
+                 flex flex-col"
+              >
+                <div className="flex flex-col text-center">
+                  <h1 className="text-3xl sm:text-4xl font-medium">
                     What I bring to the table
                   </h1>
-                  <p className="text-lg text-center mt-2">
+                  <p className="text-base sm:text-lg mt-2">
                     Tools are important, but understanding them matters more.
                   </p>
                 </div>
@@ -95,40 +127,47 @@ function App() {
                 </div>
               </section>
 
-              <section className="h-screen w-full mt-8">
+              <section className="min-h-screen lg:h-screen w-full mt-8">
                 <Backend />
               </section>
 
-              <section className="h-screen w-full mt-8">
+              <section className="lg:h-screen w-full mt-8">
                 <MobileDev />
               </section>
 
-              <section className="h-screen w-full mt-8">
+              <section className="lg:h-screen w-full mt-8">
                 <Tools />
               </section>
 
-              <section className="h-screen w-full mt-8">
+              <section className="lg:h-screen w-full mt-8">
                 <Iot />
               </section>
 
-              <section className="minus-nav-height w-full mt-24">
+              <section
+                ref={projectsRef}
+                className="lg:minus-nav-height w-full mt-8 lg:mt-24"
+              >
                 <Project />
               </section>
 
-              <section className="w-full mt-24">
-                <div className="flex flex-col">
-                  <h1 className="text-4xl font-medium text-center">
+              <section className="w-full mt-24 px-4">
+                <div className="flex flex-col text-center">
+                  <h1 className="text-3xl sm:text-4xl font-medium">
                     Let's Build Something Meaningful Together
                   </h1>
-                  <p className="text-lg text-center mt-2">
+                  <p className="text-base sm:text-lg mt-2">
                     If you're looking for someone who's hungry to grow and
                     serious about building, let's talk.
                   </p>
                 </div>
 
-                <div className="h-screen w-full flex mt-8">
+                <div className="lg:h-screen w-full flex mt-8">
                   <Contact />
                 </div>
+              </section>
+
+              <section className="w-full">
+                <Footer />
               </section>
             </article>
           </main>

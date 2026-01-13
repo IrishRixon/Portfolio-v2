@@ -1,5 +1,7 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+@import 'primeicons/primeicons.css';
+        
 
 @font-face {
   font-family: "sora";
@@ -9,6 +11,11 @@
 @font-face {
   font-family: "inter";
   src: url('/fonts/inter.ttf');
+}
+
+@font-face {
+  font-family: "roboto";
+  src: url('/fonts/roboto.ttf');
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -113,6 +120,8 @@ p {
   --card-border: #3fffd826;
   --card-bg: #ffffff0a;
   --card-ring: #3fffd81a;
+  --card-accent: rgb(20, 147, 121);
+
 
 }
 

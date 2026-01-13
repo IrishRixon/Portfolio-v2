@@ -1,55 +1,26 @@
 import React from "react";
+import SkillGroup from "../Frontend/SkillGroup";
+import Skill from "../Frontend/Skill";
 
 function MobileDev() {
   return (
-    <div className="h-full w-full flex">
-      <section className="w-1/2 h-full">
-        <h2 className="text-3xl text-center sticky top-18 mt-16">Mobile Development</h2>
+    <div className="h-full w-full flex flex-col lg:flex-row gap-8">
+      <section className="w-full lg:w-1/2 h-full flex justify-center lg:justify-start">
+        <h2 className="text-2xl sm:text-3xl lg:text-left lg:sticky text-center sticky lg:top-18 lg:mt-16">Mobile Development</h2>
       </section>
 
-      <section className="w-1/2 h-full p-8 rounded-2xl bg-(--card-bg) border border-(--card-border) shadow-2xl/50 shadow-[0_20px_60px_rgba(0,0,0,0.45)] ring-1 ring-(--card-ring) flex flex-col gap-8">
-        <div className="flex flex-col gap-2">
-          <h2>Platform</h2>
-          <ul className="flex flex-wrap w-full gap-4 text-(--text-primary)">
-            <li className="flex items-center p-2.5 rounded-xl gap-2.5 px-5 shadow-2xl backdrop-blur-2xl">
-              <img
-                className="h-[40px] w-[40px] object-contain"
-                src="\logos\android.png"
-                alt="android logo"
-              />
-              <p className="text-lg">Android</p>
-            </li>
-          </ul>
-        </div>
+      <section className="w-full lg:w-1/2 p-4 sm:p-6 md:p-8 rounded-2xl bg-(--card-bg) border border-(--card-border) shadow-2xl ring-1 ring-(--card-ring) flex flex-col gap-8">
+      <SkillGroup title="Platform">
+          <Skill icon="/logos/android.png" label="Android" />
+        </SkillGroup>
 
-        <div className="flex flex-col gap-2">
-          <h2>Languages</h2>
-          <ul className="flex flex-wrap w-full gap-4 text-(--text-primary)">
-            <li className="flex items-center p-2.5 rounded-xl gap-2.5 px-5 shadow-2xl backdrop-blur-2xl">
-              <img
-                className="h-[40px] w-[40px] object-contain"
-                src="\logos\kotlin.png"
-                alt="kotlin logo"
-              />
-              <p className="text-lg">Kotlin</p>
-            </li>
-          </ul>
-        </div>
+        <SkillGroup title="Languages">
+          <Skill icon="/logos/kotlin.png" label="Kotlin" />
+        </SkillGroup>
 
-        <div className="flex flex-col gap-2">
-          <h2>UI Framework</h2>
-
-          <ul className="flex flex-wrap w-full gap-4 text-(--text-primary)">
-            <li className="flex items-center p-2.5 rounded-xl gap-2.5 px-5 shadow-2xl backdrop-blur-2xl">
-              <img
-                className="h-[40px] w-[40px] object-contain"
-                src="\logos\jetpackcompose.png"
-                alt="jetpack compose logo"
-              />
-              <p className="text-lg">Jetpack compose</p>
-            </li>
-          </ul>
-        </div>
+        <SkillGroup title="UI Framework">
+          <Skill icon="/logos/jetpackcompose.png" label="Jetpack Compose" />
+        </SkillGroup>
       </section>
     </div>
   );

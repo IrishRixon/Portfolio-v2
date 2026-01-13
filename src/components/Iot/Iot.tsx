@@ -1,54 +1,29 @@
+import Skill from "../Frontend/Skill";
+import SkillGroup from "../Frontend/SkillGroup";
+
 function Iot() {
   return (
-    <div className="h-full w-full flex">
-      <section className="w-1/2 h-full">
-        <h2 className="text-3xl text-center sticky top-18 mt-16">
+    <div className="h-full w-full flex flex-col lg:flex-row gap-8">
+      <section className="w-full lg:w-1/2 h-full flex justify-center lg:justify-start">
+        <h2 className="text-2xl sm:text-3xl lg:text-left lg:sticky text-center sticky lg:top-18 lg:mt-16">
           Internet of Things (IoT)
         </h2>
       </section>
 
-      <section className="w-1/2 h-full p-8 rounded-2xl bg-(--card-bg) border border-(--card-border) shadow-2xl/50 shadow-[0_20px_60px_rgba(0,0,0,0.45)] ring-1 ring-(--card-ring) flex flex-col gap-8">
-        <div className="flex flex-col gap-2">
-          <h2>Microcontroller</h2>
-          <ul className="flex flex-wrap w-full gap-4 text-(--text-primary)">
-            <li className="flex items-center p-2.5 rounded-xl gap-2.5 px-5 shadow-2xl backdrop-blur-2xl">
-              <p className="text-lg">ESP8266</p>
-            </li>
+      <section className="w-full lg:w-1/2 p-4 sm:p-6 md:p-8 rounded-2xl bg-(--card-bg) border border-(--card-border) shadow-2xl ring-1 ring-(--card-ring) flex flex-col gap-8">
+        <SkillGroup title="Microcontrollers">
+          <Skill icon="" label="ESP8266" />
+          <Skill icon="" label="ESP32" />
+        </SkillGroup>
 
-            <li className="flex items-center p-2.5 rounded-xl gap-2.5 px-5 shadow-2xl backdrop-blur-2xl">
-              <p className="text-lg">ESP32</p>
-            </li>
-          </ul>
-        </div>
-
-        <div className="flex flex-col gap-2">
-          <h2>Sensors</h2>
-          <ul className="flex flex-wrap w-full gap-4 text-(--text-primary)">
-            <li className="flex items-center p-2.5 rounded-xl gap-2.5 px-5 shadow-2xl backdrop-blur-2xl">
-              <p className="text-lg">MLX90614</p>
-            </li>
-
-            <li className="flex items-center p-2.5 rounded-xl gap-2.5 px-5 shadow-2xl backdrop-blur-2xl">
-              <p className="text-lg">MQ4</p>
-            </li>
-
-            <li className="flex items-center p-2.5 rounded-xl gap-2.5 px-5 shadow-2xl backdrop-blur-2xl">
-              <p className="text-lg">MQ 137</p>
-            </li>
-
-            <li className="flex items-center p-2.5 rounded-xl gap-2.5 px-5 shadow-2xl backdrop-blur-2xl">
-              <p className="text-lg">DHT11</p>
-            </li>
-
-            <li className="flex items-center p-2.5 rounded-xl gap-2.5 px-5 shadow-2xl backdrop-blur-2xl">
-              <p className="text-lg">Water flow sensor</p>
-            </li>
-
-            <li className="flex items-center p-2.5 rounded-xl gap-2.5 px-5 shadow-2xl backdrop-blur-2xl">
-              <p className="text-lg">Relay</p>
-            </li>
-          </ul>
-        </div>
+        <SkillGroup title="Sensors">
+          <Skill icon="" label="MLX90614" />
+          <Skill icon="" label="MQ4" />
+          <Skill icon="" label="MQ137" />
+          <Skill icon="" label="DHT11" />
+          <Skill icon="" label="Water Flow Sensor" />
+          <Skill icon="" label="Relay" />
+        </SkillGroup>
       </section>
     </div>
   );

@@ -1,138 +1,70 @@
 import React from "react";
+import Skill from "./Skill";
+import SkillGroup from "./SkillGroup";
 
 function Frontend() {
   return (
-    <div className="h-full w-full flex relative">
-      <section className="w-1/2 h-full">
-        <h2 className="text-3xl text-center sticky top-18 mt-16">
+    <div
+      className="h-full w-full
+        flex flex-col
+        lg:flex-row
+        gap-8
+        relative"
+    >
+      <section
+        className="w-full
+          lg:w-1/2
+          flex
+          justify-center
+          lg:justify-start"
+      >
+        <h2
+          className="text-2xl
+            sm:text-3xl
+            font-medium
+            text-center
+            lg:text-left
+            lg:sticky
+            lg:top-24"
+        >
           Frontend Development
         </h2>
       </section>
 
-      <section className="w-1/2 h-full p-8 rounded-2xl bg-(--card-bg) border border-(--card-border) shadow-2xl/50 shadow-[0_20px_60px_rgba(0,0,0,0.45)] ring-1 ring-(--card-ring) flex flex-col gap-8">
-        <div className="flex flex-col gap-2">
-          <h2>Frameworks & Core</h2>
-          <ul className="flex flex-wrap w-full gap-4 text-(--text-primary)">
-            <li className="flex items-center p-2.5 rounded-xl gap-2.5 px-5 shadow-2xl backdrop-blur-2xl">
-              <img
-                className="h-[40px] w-[40px] object-contain"
-                src="\logos\react.png"
-                alt="react logo"
-              />
-              <p className="text-lg">React</p>
-            </li>
+      <section
+        className="w-full
+          lg:w-1/2
+          p-4
+          sm:p-6
+          md:p-8
+          rounded-2xl
+          bg-(--card-bg)
+          border border-(--card-border)
+          shadow-2xl/50 shadow-[0_20px_60px_rgba(0,0,0,0.45)]
+          ring-1 ring-(--card-ring)
+          flex flex-col
+          gap-8"
+      >
+        <SkillGroup title="Frameworks & Core">
+          <Skill icon="/logos/react.png" label="React" />
+          <Skill icon="/logos/angular.png" label="Angular" />
+          <Skill icon="/logos/typescript.png" label="TypeScript" />
+          <Skill icon="/logos/js.png" label="JavaScript" />
+        </SkillGroup>
 
-            <li className="flex items-center p-2.5 rounded-xl gap-2.5 px-5 shadow-2xl backdrop-blur-2xl">
-              <img
-                className="h-[40px] w-[40px] object-cover"
-                src="\logos\angular.png"
-                alt="angular logo"
-              />
-              <p className="text-lg">Angular</p>
-            </li>
+        <SkillGroup title="Styling & Layout">
+          <Skill icon="/logos/tailwind.png" label="Tailwind" />
+          <Skill icon="/logos/bootstrap.png" label="Bootstrap" />
+          <Skill icon="/logos/html.png" label="HTML" />
+          <Skill icon="/logos/css.png" label="CSS" />
+        </SkillGroup>
 
-            <li className="flex items-center p-2.5 rounded-xl gap-2.5 px-5 shadow-2xl backdrop-blur-2xl">
-              <img
-                className="h-[40px] w-[40px] object-cover"
-                src="\logos\typescript.png"
-                alt="typescript logo"
-              />
-              <p className="text-lg">Typescript</p>
-            </li>
-
-            <li className="flex items-center p-2.5 rounded-xl gap-2.5 px-5 shadow-2xl backdrop-blur-2xl">
-              <img
-                className="h-[40px] w-[40px] object-cover"
-                src="\logos\js.png"
-                alt="javascript logo"
-              />
-              <p className="text-lg">Javascript</p>
-            </li>
-          </ul>
-        </div>
-
-        <div className="flex flex-col gap-2">
-          <h2>Styling & Layout</h2>
-          <ul className="flex flex-wrap w-full gap-4 text-(--text-primary)">
-            <li className="flex items-center p-2.5 rounded-xl gap-2.5 px-5 shadow-2xl backdrop-blur-2xl">
-              <img
-                className="h-[40px] w-[40px] object-contain"
-                src="\logos\tailwind.png"
-                alt="tailwind logo"
-              />
-              <p className="text-lg">Tailwind</p>
-            </li>
-
-            <li className="flex items-center p-2.5 rounded-xl gap-2.5 px-5 shadow-2xl backdrop-blur-2xl">
-              <img
-                className="h-[40px] w-[40px] object-contain"
-                src="\logos\bootstrap.png"
-                alt="bootstrap logo"
-              />
-              <p className="text-lg">Bootstrap</p>
-            </li>
-
-            <li className="flex items-center p-2.5 rounded-xl gap-2.5 px-5 shadow-2xl backdrop-blur-2xl">
-              <img
-                className="h-[40px] w-[40px] object-contain"
-                src="\logos\html.png"
-                alt="html logo"
-              />
-              <p className="text-lg">HTML</p>
-            </li>
-
-            <li className="flex items-center p-2.5 rounded-xl gap-2.5 px-5 shadow-2xl backdrop-blur-2xl">
-              <img
-                className="h-[40px] w-[40px] object-contain"
-                src="\logos\css.png"
-                alt="css logo"
-              />
-              <p className="text-lg">CSS</p>
-            </li>
-          </ul>
-        </div>
-
-        <div className="flex flex-col gap-2">
-          <h2>UI Component libraries</h2>
-
-          <ul className="flex flex-wrap w-full gap-4 text-(--text-primary)">
-            <li className="flex items-center p-2.5 rounded-xl gap-2.5 px-5 shadow-2xl backdrop-blur-2xl">
-              <img
-                className="h-[40px] w-[40px] object-contain"
-                src="\logos\primeng.png"
-                alt="primeng logo"
-              />
-              <p className="text-lg">Prime NG</p>
-            </li>
-
-            <li className="flex items-center p-2.5 rounded-xl gap-2.5 px-5 shadow-2xl backdrop-blur-2xl">
-              <img
-                className="h-[40px] w-[40px] object-contain"
-                src="\logos\prime react.png"
-                alt="primeng logo"
-              />
-              <p className="text-lg">Prime React</p>
-            </li>
-
-            <li className="flex items-center p-2.5 rounded-xl gap-2.5 px-5 shadow-2xl backdrop-blur-2xl">
-              <img
-                className="h-[40px] w-[40px] object-contain rounded"
-                src="\logos\shadcn.png"
-                alt="shadcn logo"
-              />
-              <p className="text-lg">Shadcn</p>
-            </li>
-
-            <li className="flex items-center p-2.5 rounded-xl gap-2.5 px-5 shadow-2xl backdrop-blur-2xl">
-              <img
-                className="h-[40px] w-[40px] object-contain rounded"
-                src="\logos\reactbits.png"
-                alt="react bits logo"
-              />
-              <p className="text-lg">React bits</p>
-            </li>
-          </ul>
-        </div>
+        <SkillGroup title="UI Component Libraries">
+          <Skill icon="/logos/primeng.png" label="Prime NG" />
+          <Skill icon="/logos/prime react.png" label="Prime React" />
+          <Skill icon="/logos/shadcn.png" label="Shadcn" />
+          <Skill icon="/logos/reactbits.png" label="React Bits" />
+        </SkillGroup>
       </section>
     </div>
   );

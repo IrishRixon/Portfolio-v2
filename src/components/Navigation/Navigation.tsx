@@ -11,9 +11,21 @@ import { useEffect, useState } from "react";
 
 interface Props {
   addClass: string;
+  onHome: () => void;
+  onAbout: () => void;
+  onSkills: () => void;
+  onProjects: () => void;
+  onContact: () => void;
 }
 
-function Navigation({ addClass }: Props) {
+function Navigation({
+  addClass,
+  onHome,
+  onAbout,
+  onContact,
+  onProjects,
+  onSkills,
+}: Props) {
   return (
     <div
       className={`h-16 w-full flex justify-between px-24 ${addClass} transition-[background-color]`}
@@ -29,7 +41,7 @@ function Navigation({ addClass }: Props) {
               asChild
               className={navigationMenuTriggerStyle()}
             >
-              <Link href="/docs">Home</Link>
+              <button onClick={onHome}>Home</button>
             </NavigationMenuLink>
           </NavigationMenuItem>
 
@@ -38,7 +50,7 @@ function Navigation({ addClass }: Props) {
               asChild
               className={navigationMenuTriggerStyle()}
             >
-              <Link href="/docs">About</Link>
+              <button onClick={onAbout}>About</button>
             </NavigationMenuLink>
           </NavigationMenuItem>
 
@@ -47,7 +59,7 @@ function Navigation({ addClass }: Props) {
               asChild
               className={navigationMenuTriggerStyle()}
             >
-              <Link href="/docs">Skills</Link>
+              <button onClick={onSkills}>Skills</button>
             </NavigationMenuLink>
           </NavigationMenuItem>
 
@@ -56,7 +68,7 @@ function Navigation({ addClass }: Props) {
               asChild
               className={navigationMenuTriggerStyle()}
             >
-              <Link href="/docs">Project</Link>
+              <button onClick={onProjects}>Projects</button>
             </NavigationMenuLink>
           </NavigationMenuItem>
 
@@ -65,7 +77,7 @@ function Navigation({ addClass }: Props) {
               asChild
               className={navigationMenuTriggerStyle()}
             >
-              <Link href="/docs">Contact</Link>
+              <button onClick={onContact}>Contact</button>
             </NavigationMenuLink>
           </NavigationMenuItem>
         </NavigationMenuList>
