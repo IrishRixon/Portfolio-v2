@@ -17,8 +17,8 @@ function AboutMe() {
               max-w-[280px]
               sm:max-w-[360px]
               md:max-w-[420px]
-              lg:max-w-[500px]
-              xl:max-w-[550px]
+              lg:max-h-[550px]
+              xl:max-h-[550px]
               object-cover
               rounded-xl"
             src="/images/photo2.webp"

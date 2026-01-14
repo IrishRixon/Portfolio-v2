@@ -66,7 +66,7 @@ const projects: Project[] = [
 
 function Project() {
   return (
-    <div className="min-h-screen lg:h-full w-full lg:mt-24 flex flex-col">
+    <div className="min-h-screen lg:min-h-0 lg:h-full w-full lg:mt-24 flex flex-col">
       <header className="flex flex-col">
         <h1 className="text-3xl sm:text-4xl font-medium lg:text-center mt-4 text-center">
           Projects
@@ -88,11 +88,11 @@ function Project() {
             <button
               className="text-start group transition-colors duration-300
          hover:cursor-pointer hover:border-(--accent-primary)
-        flex flex-col lg:flex-row min-h-[600px] overflow-hidden lg:min-w-full lg:h-full rounded-2xl bg-(--card-bg)
+        flex flex-col lg:flex-row overflow-hidden lg:min-w-full lg:min-h-0 lg:h-auto rounded-2xl bg-(--card-bg)
          backdrop-blur-3xl border border-(--card-border) 
         shadow-2xl/50 shadow-[0_20px_60px_rgba(0,0,0,0.45)] ring-1 ring-(--card-ring) lg:snap-center"
             >
-              <div className="w-full lg:w-1/2 lg:h-full h-64 overflow-hidden">
+              <div className="w-full h-64 lg:w-1/2 lg:h-auto overflow-hidden">
                 <img
                   className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                   src={project.image}
@@ -160,7 +160,6 @@ function Project() {
             </button>
           );
         })}
-
       </article>
     </div>
   );

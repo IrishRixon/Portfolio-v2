@@ -5,7 +5,8 @@ import SkillGroup from "../Frontend/SkillGroup";
 function Tools() {
   return (
     <div className="h-full w-full flex flex-col lg:flex-row gap-8">
-      <section className="w-full lg:w-1/2 h-full flex justify-center lg:justify-start">
+      <section className="w-full lg:w-1/2 h-full flex
+          lg:block justify-center lg:justify-start">
         <h2 className="text-2xl sm:text-3xl lg:text-left lg:sticky text-center sticky lg:top-18 lg:mt-16">Tools & Platforms</h2>
       </section>
 

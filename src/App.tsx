@@ -80,7 +80,7 @@ function App() {
 
           <main className="absolute top-0 right-0 h-dvh w-full">
             <nav className="w-full h-16 fixed top-0 z-20">
-              {/* <Navigation
+              <Navigation
                 onHome={() => scrollTo(heroRef, 0)}
                 onAbout={() => scrollTo(aboutRef, -64)}
                 onSkills={() => scrollTo(skillsRef, -64)}
@@ -91,7 +91,7 @@ function App() {
                     ? "bg-[#070b1a]/80 backdrop-blur-md border-b border-white/10"
                     : "bg-transparent"
                 }
-              /> */}
+              />
             </nav>
 
             <article

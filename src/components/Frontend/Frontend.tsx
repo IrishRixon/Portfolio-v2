@@ -15,6 +15,7 @@ function Frontend() {
         className="w-full
           lg:w-1/2
           flex
+          lg:block
           justify-center
           lg:justify-start"
       >
@@ -24,7 +25,7 @@ function Frontend() {
             font-medium
             text-center
             lg:text-left
-            lg:sticky
+            sticky
             lg:top-24"
         >
           Frontend Development
