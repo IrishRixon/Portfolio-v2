@@ -1,13 +1,11 @@
 import {
-  Link,
   NavigationMenu,
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
-  NavigationMenuTrigger,
 } from "@radix-ui/react-navigation-menu";
 import { navigationMenuTriggerStyle } from "../ui/navigation-menu";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 interface Props {
   addClass: string;

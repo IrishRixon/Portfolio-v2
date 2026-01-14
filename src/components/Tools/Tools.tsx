@@ -1,4 +1,4 @@
-import React from "react";
+
 import Skill from "../Frontend/Skill";
 import SkillGroup from "../Frontend/SkillGroup";
 

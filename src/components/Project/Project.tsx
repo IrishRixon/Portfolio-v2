@@ -1,6 +1,3 @@
-import ReactLenis, { LenisContext } from "lenis/react";
-import React, { useContext } from "react";
-
 interface Project {
   title: string;
   image: string;

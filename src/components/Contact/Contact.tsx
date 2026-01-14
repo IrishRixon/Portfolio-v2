@@ -1,29 +1,7 @@
-import { postEmailForm } from "@/API/emailFormAPI";
-import type { emailContent } from "@/Interface/interface";
-import React, { useState } from "react";
+
 
 function Contact() {
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
-  const [name, setName] = useState("");
-
-  const onSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-
-    try {
-      const content = {
-        name,
-        email,
-        message,
-      };
-
-      const res = await postEmailForm(content);
-      console.log("Email sent:", res.data);
-    } catch (error) {
-      console.error("Failed to send email:", error);
-    }
-  };
-
+ 
   return (
     <div className="w-full lg:flex-row flex-col h-full lg:pt-14 pb-8 flex gap-8">
       <section className="w-full lg:w-1/2 lg:h-full">
@@ -44,9 +22,6 @@ function Contact() {
               placeholder="Juan Dela Cruz"
               className="bg-(--card-border)/50 px-4 w-full h-12 border rounded-xl border-(--accent-primary)/20 focus:border-(--accent-primary)/50 outline-none text-(--text-primary)"
               name="name"
-              onChange={(e) => {
-                setName(e.target.value);
-              }}
               type="text"
             />
 
@@ -58,9 +33,7 @@ function Contact() {
               className="px-4 w-full h-12 border rounded-xl border-(--accent-primary)/20 bg-(--card-border)/50 focus:border-(--accent-primary)/50 outline-none text-(--text-primary)"
               name="email"
               type="text"
-              onChange={(e) => {
-                setEmail(e.target.value);
-              }}
+              
             />
 
             <label className="mt-4 mb-2" htmlFor="">
@@ -70,9 +43,7 @@ function Contact() {
               className="p-4 w-full h-48 resize-none border rounded-xl border-(--accent-primary)/20 bg-(--card-border)/50 text-(--text-primary) focus:border-(--accent-primary)/50 outline-none"
               name="message"
               placeholder="Tell me about your project or opportunity ... "
-              onChange={(e) => {
-                setMessage(e.target.value);
-              }}
+              
             ></textarea>
 
             <button

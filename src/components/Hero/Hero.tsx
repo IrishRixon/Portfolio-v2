@@ -1,4 +1,3 @@
-import React from "react";
 import RotatingText from "../RotatingText";
 
 function Hero() {
