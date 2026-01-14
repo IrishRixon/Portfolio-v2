@@ -216,7 +216,7 @@ const RotatingText = forwardRef<RotatingTextRef, RotatingTextProps>(
 
         <span
           ref={measureRef}
-          className="px-4 inline-flex whitespace-nowrap pointer-events-none"
+          className="inline-flex whitespace-nowrap pointer-events-none"
         >
           <AnimatePresence
             mode={animatePresenceMode}
