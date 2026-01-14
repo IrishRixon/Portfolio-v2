@@ -23,6 +23,7 @@ function App() {
   const aboutRef = useRef<HTMLElement>(null);
   const skillsRef = useRef<HTMLElement>(null);
   const projectsRef = useRef<HTMLElement>(null);
+  const contactRef = useRef<HTMLElement>(null);
 
   useLenis((lenis) => {
     // called every scroll
@@ -84,7 +85,7 @@ function App() {
                 onAbout={() => scrollTo(aboutRef, -64)}
                 onSkills={() => scrollTo(skillsRef, -64)}
                 onProjects={() => scrollTo(projectsRef, 20)}
-                onContact={() => scrollTo(projectsRef, -64)}
+                onContact={() => scrollTo(contactRef, -64)}
                 addClass={
                   scrolled
                     ? "bg-[#070b1a]/80 backdrop-blur-md border-b border-white/10"
@@ -163,7 +164,7 @@ function App() {
                 </Suspense>
               </section>
 
-              <section className="w-full mt-24 px-4">
+              <section ref={contactRef} className="w-full mt-24 px-4">
                 <div className="flex flex-col text-center">
                   <h1 className="text-3xl sm:text-4xl font-medium">
                     Let's Build Something Meaningful Together
