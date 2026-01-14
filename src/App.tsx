@@ -74,7 +74,11 @@ function App() {
           </div>
 
           <main className="absolute top-0 right-0 h-dvh w-full">
-            <nav className="w-full h-16 fixed top-0 z-20">
+            <nav
+              className={`w-full h-16 md:fixed top-0 z-20 ${
+                scrolled ? "fixed" : "absolute"
+              }`}
+            >
               <Navigation
                 onHome={() => scrollTo(heroRef, 0)}
                 onAbout={() => scrollTo(aboutRef, -64)}
