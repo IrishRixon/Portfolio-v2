@@ -96,12 +96,10 @@ function App() {
               xl:px-24 w-full z-10 absolute top-0"
             >
               <section ref={heroRef} className="min-h-screen w-full">
-        
-                  <Hero />
-                
+                <Hero />
               </section>
 
-              <section ref={aboutRef} className="h-screen w-full mt-24">
+              <section ref={aboutRef} className="min-h-screen w-full mt-24">
                 <Suspense fallback={<div>Loading ...</div>}>
                   <AboutMe />
                 </Suspense>
@@ -162,21 +160,19 @@ function App() {
               </section>
 
               <section className="w-full mt-24 px-4">
-                
-                  <div className="flex flex-col text-center">
-                    <h1 className="text-3xl sm:text-4xl font-medium">
-                      Let's Build Something Meaningful Together
-                    </h1>
-                    <p className="text-base sm:text-lg mt-2">
-                      If you're looking for someone who's hungry to grow and
-                      serious about building, let's talk.
-                    </p>
-                  </div>
+                <div className="flex flex-col text-center">
+                  <h1 className="text-3xl sm:text-4xl font-medium">
+                    Let's Build Something Meaningful Together
+                  </h1>
+                  <p className="text-base sm:text-lg mt-2">
+                    If you're looking for someone who's hungry to grow and
+                    serious about building, let's talk.
+                  </p>
+                </div>
 
-                  <div className="lg:h-screen w-full flex mt-8">
-                    <Contact />
-                  </div>
-                
+                <div className="lg:h-screen w-full flex mt-8">
+                  <Contact />
+                </div>
               </section>
 
               <section className="w-full">

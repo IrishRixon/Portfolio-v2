@@ -5,7 +5,7 @@ function AboutMe() {
       className="flex flex-col h-full w-full rounded-2xl bg-(--card-bg) b
     ackdrop-blur-2xl border border-(--card-border)
      shadow-2xl/50 shadow-[0_20px_60px_rgba(0,0,0,0.45)] ring-1 ring-(--card-ring) 
-     p-4 sm:p-6 md:p-8 lg:p-10 overflow-y-auto"
+     p-4 sm:p-6 md:p-8 lg:p-10"
     >
       <h1 className="text-3xl sm:text-4xl font-medium text-center">Who I am</h1>
 

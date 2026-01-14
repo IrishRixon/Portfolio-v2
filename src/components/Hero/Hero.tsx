@@ -17,7 +17,7 @@ function Hero() {
           </h1>
           <RotatingText
             texts={["idea to reality!", "concept to code", "vision to product"]}
-            mainClassName="px-2 sm:px-2 md:px-3 bg-cyan-600 text-black overflow-hidden py-0.5 sm:py-1 md:py-2 justify-center rounded-lg text-base sm:text-lg lg:text-xl font-bold italic text-[#061312]!"
+            mainClassName="sm:px-2 md:px-3 bg-cyan-600 text-black overflow-hidden py-0.5 sm:py-1 md:py-2 justify-center rounded-lg text-base sm:text-lg lg:text-xl font-bold italic text-[#061312]!"
             staggerFrom={"first"}
             initial={{ y: "100%" }}
             animate={{ y: 0 }}
