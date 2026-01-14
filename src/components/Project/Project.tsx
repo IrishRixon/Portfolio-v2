@@ -5,6 +5,7 @@ interface Project {
   problem: string;
   process: string;
   outcome: string;
+  link: string;
 }
 
 const quizAITechUsed: string[] = [
@@ -34,30 +35,33 @@ const projects: Project[] = [
     image: "/images/pawfile.jpeg",
     tech: pawFileTechUsed,
     problem:
-      "I wanted to explore full-stack development, authentication, and media uploads while building a digital pet identification system using QR codes.",
+      "I wanted to explore how full-stack development, authentication, and Uploading media to internet while also building innovative digital pet identification solutions for pet owners using QR code.",
     process:
-      "Users can register, add pets, generate QR codes, and upload pet images.",
+      "Firstly, users can log in and create account. Secondly, the users can add pets and generate QR code for each pet. Thirdly, users can upload images of their pets",
     outcome:
       "Built a fully functional digital pet identification system using QR codes.",
+    link: "https://pawfile.netlify.app/",
   },
   {
     title: "QuizAI",
     image: "/images/quizai.jpeg",
     tech: quizAITechUsed,
     problem:
-      "I wanted to explore AI-powered games while learning real-time multiplayer using WebSockets.",
+      "I wanted to explore how AI-powered games can enhance learning while also gaining hands-on experience with WebSockets for real-time multiplayer functionality.",
     process:
-      "AI dynamically generates questions based on category and difficulty, with real-time multiplayer rooms.",
+      "Users first select a category and difficulty, which the AI uses to generate quiz questions dynamically. For multiplayer mode, users can create or join rooms, enabling real-time competitive gameplay.",
     outcome: "Built a real-time multiplayer quiz game powered by AI.",
+    link: "https://quizai-irishrixon.netlify.app/",
   },
   {
     title: "Portfolio v1",
     image: "/images/portfolioV1.jpeg",
     tech: portfolioV1,
     problem:
-      "I wanted a simple but visually appealing way to showcase my skills and projects.",
+      "I wanted to showcase my skills and projects in a simple but visually appealing manner.",
     process: "Focused on simplicity, clarity, and easy navigation.",
     outcome: "Built a clean and functional personal portfolio website.",
+    link: "https://irishrixonportfolio.netlify.app/",
   },
 ];
 
@@ -82,7 +86,9 @@ function Project() {
       >
         {projects.map((project) => {
           return (
-            <button
+            <a
+              href={project.link}
+              target="_blank"
               className="text-start group transition-colors duration-300
          hover:cursor-pointer hover:border-(--accent-primary)
         flex flex-col lg:flex-row overflow-hidden lg:min-w-full lg:min-h-0 lg:h-auto rounded-2xl bg-(--card-bg)
@@ -154,7 +160,7 @@ function Project() {
                   <p className="mt-2 ps-8 text-sm!">{project.outcome}</p>
                 </div>
               </section>
-            </button>
+            </a>
           );
         })}
       </article>
