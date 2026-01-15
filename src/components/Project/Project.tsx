@@ -1,3 +1,5 @@
+import { motion, MotionValue } from "motion/react";
+
 interface Project {
   title: string;
   image: string;
@@ -65,9 +67,14 @@ const projects: Project[] = [
   },
 ];
 
-function Project() {
+interface Props {
+  horizontalScroll: MotionValue<number>;
+  horizontalScrollRef: any;
+}
+
+function Project({ horizontalScroll, horizontalScrollRef }: Props) {
   return (
-    <div className="min-h-screen lg:min-h-0 lg:h-full w-full lg:mt-24 flex flex-col">
+    <div className="sticky top-16 min-h-screen lg:min-h-0 lg:h-(--projects-height) w-full lg:mt-24 flex flex-col">
       <header className="flex flex-col">
         <h1 className="text-3xl sm:text-4xl font-medium lg:text-center mt-4 text-center">
           Projects
@@ -78,11 +85,12 @@ function Project() {
         </p>
       </header>
 
-      <article
+      <motion.article
+        style={{ x: horizontalScroll }}
+        ref={horizontalScrollRef}
         className="lg:grow flex flex-col
           lg:flex-row mt-10 lg:mt-8 px-4 sm:px-8 lg:px-20
-           pb-10 pt-5 gap-8 lg:gap-x-40 lg:overflow-x-auto
-           lg:snap-x lg:snap-mandatory"
+           pb-10 pt-5 gap-8 lg:gap-x-40"
       >
         {projects.map((project) => {
           return (
@@ -93,7 +101,7 @@ function Project() {
          hover:cursor-pointer hover:border-(--accent-primary)
         flex flex-col lg:flex-row overflow-hidden lg:min-w-full lg:min-h-0 lg:h-auto rounded-2xl bg-(--card-bg)
          backdrop-blur-3xl border border-(--card-border) 
-        shadow-2xl/50 shadow-[0_20px_60px_rgba(0,0,0,0.45)] ring-1 ring-(--card-ring) lg:snap-center"
+        shadow-2xl/50 shadow-[0_20px_60px_rgba(0,0,0,0.45)] ring-1 ring-(--card-ring)"
             >
               <div className="w-full h-64 lg:w-1/2 lg:h-auto overflow-hidden">
                 <img
@@ -163,7 +171,7 @@ function Project() {
             </a>
           );
         })}
-      </article>
+      </motion.article>
     </div>
   );
 }

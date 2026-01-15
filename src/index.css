@@ -2,6 +2,10 @@
 @import "tw-animate-css";
 @import 'primeicons/primeicons.css';
         
+html,
+body {
+  overflow-x: hidden;
+}
 
 @font-face {
   font-family: "sora";
@@ -122,7 +126,7 @@ p {
   --card-ring: #3fffd81a;
   --card-accent: rgb(20, 147, 121);
 
-
+  --projects-height: calc(100dvh - 64px);
 }
 
 .dark {
@@ -170,4 +174,5 @@ p {
 
 .minus-nav-height {
   height: calc(100dvh - 64px);
+  /* height: 300dvh !important; */
 }

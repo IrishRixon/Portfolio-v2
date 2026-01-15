@@ -11,18 +11,20 @@ import Iot from "./components/Iot/Iot";
 import Tools from "./components/Tools/Tools";
 import { ReactLenis, useLenis } from "lenis/react";
 import type { LenisRef } from "lenis/react";
-import { cancelFrame, frame } from "framer-motion";
+import { cancelFrame, frame, useScroll, useTransform } from "framer-motion";
 const Project = lazy(() => import("./components/Project/Project"));
 const Contact = lazy(() => import("./components/Contact/Contact"));
 import Footer from "./components/Footer/Footer";
 
 function App() {
   const [scrolled, setScrolled] = useState(false);
+  const [scrollWidth, setScrollWidth] = useState(0);
   const lenisRef = useRef<LenisRef>(null);
   const heroRef = useRef<HTMLElement>(null);
   const aboutRef = useRef<HTMLElement>(null);
   const skillsRef = useRef<HTMLElement>(null);
   const projectsRef = useRef<HTMLElement>(null);
+  const horizontalScrollRef = useRef<HTMLElement>(null);
   const contactRef = useRef<HTMLElement>(null);
 
   useLenis((lenis) => {
@@ -54,6 +56,30 @@ function App() {
 
     return () => cancelFrame(update);
   }, []);
+
+  const { scrollYProgress } = useScroll({
+    target: projectsRef,
+    offset: ["start start", "end end"],
+  });
+
+  useEffect(() => {
+    function calculate() {
+      if (!horizontalScrollRef.current) return;
+
+      const scrollContainer = horizontalScrollRef.current;
+      const totalWidth = scrollContainer.scrollWidth;
+      const visibleWidth = scrollContainer.clientWidth;
+
+      setScrollWidth(totalWidth - visibleWidth);
+    }
+
+    calculate();
+    window.addEventListener("resize", calculate);
+
+    return () => window.removeEventListener("resize", calculate);
+  }, []); 
+
+  const x = useTransform(scrollYProgress, [0, 1], [0, -scrollWidth]);
 
   return (
     <>
@@ -157,11 +183,12 @@ function App() {
 
               <section
                 ref={projectsRef}
-                className="lg:minus-nav-height w-full mt-8 lg:mt-24"
+                className="h-[400dvh] w-full mt-8 lg:mt-24"
               >
-                <Suspense fallback={<div>Loading ...</div>}>
-                  <Project />
-                </Suspense>
+                <Project
+                  horizontalScroll={x}
+                  horizontalScrollRef={horizontalScrollRef}
+                />
               </section>
 
               <section ref={contactRef} className="w-full mt-24 px-4">
