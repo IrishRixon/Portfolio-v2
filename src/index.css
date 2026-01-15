@@ -7,6 +7,12 @@ body {
   overflow-x: hidden;
 }
 
+@media (width > 1280px) {
+  html, body {
+    overflow-y: hidden;
+  }
+}
+
 @font-face {
   font-family: "sora";
   src: url('/fonts/sora.ttf');

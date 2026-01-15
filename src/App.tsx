@@ -183,7 +183,7 @@ function App() {
 
               <section
                 ref={projectsRef}
-                className="h-[400dvh] w-full mt-8 lg:mt-24"
+                className="lg:h-[400dvh] w-full mt-8 lg:mt-24"
               >
                 <Project
                   horizontalScroll={x}

@@ -1,7 +1,4 @@
-
-
 function Contact() {
- 
   return (
     <div className="w-full lg:flex-row flex-col h-full lg:pt-14 pb-8 flex gap-8">
       <section className="w-full lg:w-1/2 lg:h-full">
@@ -33,7 +30,6 @@ function Contact() {
               className="px-4 w-full h-12 border rounded-xl border-(--accent-primary)/20 bg-(--card-border)/50 focus:border-(--accent-primary)/50 outline-none text-(--text-primary)"
               name="email"
               type="text"
-              
             />
 
             <label className="mt-4 mb-2" htmlFor="">
@@ -43,7 +39,6 @@ function Contact() {
               className="p-4 w-full h-48 resize-none border rounded-xl border-(--accent-primary)/20 bg-(--card-border)/50 text-(--text-primary) focus:border-(--accent-primary)/50 outline-none"
               name="message"
               placeholder="Tell me about your project or opportunity ... "
-              
             ></textarea>
 
             <button
@@ -72,7 +67,7 @@ function Contact() {
               </span>
               <div className="flex flex-col text-sm!">
                 <p className="font-[roboto]!">Email</p>
-                <p className="text-(--text-primary)! text-lg font-[roboto]!">
+                <p className="text-(--text-primary)! text-base lg:text-lg font-[roboto]!">
                   irishrixon@gmail.com
                 </p>
               </div>
@@ -83,7 +78,7 @@ function Contact() {
               </span>
               <div className="flex flex-col text-sm!">
                 <p className="font-[roboto]!">Location</p>
-                <p className="text-(--text-primary)! text-lg font-[roboto]!">
+                <p className="text-(--text-primary)! text-base lg:text-lg font-[roboto]!">
                   Candaba, Pampanga
                 </p>
               </div>
