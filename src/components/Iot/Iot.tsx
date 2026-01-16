@@ -1,3 +1,4 @@
+import { motion } from "motion/react";
 import Skill from "../Frontend/Skill";
 import SkillGroup from "../Frontend/SkillGroup";
 
@@ -6,9 +7,9 @@ function Iot() {
     <div className="h-full w-full flex flex-col lg:flex-row gap-8">
       <section className="w-full lg:w-1/2 h-full flex
           lg:block justify-center lg:justify-start">
-        <h2 className="text-2xl sm:text-3xl lg:text-left lg:sticky text-center sticky lg:top-18 lg:mt-16">
+        <motion.h2 className="text-2xl sm:text-3xl lg:text-left lg:sticky text-center sticky lg:top-18 lg:mt-16">
           Internet of Things (IoT)
-        </h2>
+        </motion.h2>
       </section>
 
       <section className="w-full lg:w-1/2 p-4 sm:p-6 md:p-8 rounded-2xl bg-(--card-bg) border border-(--card-border) shadow-2xl ring-1 ring-(--card-ring) flex flex-col gap-8">

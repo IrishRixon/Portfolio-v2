@@ -1,31 +1,37 @@
-import { AnimatePresence, motion } from "motion/react";
+import { AnimatePresence, motion, type Transition } from "motion/react";
 import RotatingText from "../RotatingText";
+
+
+const transition: Transition = {
+  type: "spring",
+  duration: 1,
+}
 
 function Hero() {
   return (
     <div className="min-h-screen w-full flex flex-col md:flex-row relative justify-center md:justify-start">
       <section className="flex flex-col justify-center w-full md:w-1/2 text-center md:text-left">
           <motion.h1
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 0.5 }}
+            initial={{ opacity: 0, x: -10 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ ...transition, delay: 0.5 }}
             className="text-3xl sm:text-4xl lg:text-5xl font-semibold"
           >
             Hello, I'm Irish Rixon
           </motion.h1>
 
           <motion.h2 
-          initial={{height: 0, overflow: "hidden", y: -10}}
-          animate={{height: "auto", y: 0}}
-          transition={{ duration: 1, delay: 1 }}
+          initial={{opacity: 0, overflow: "hidden", y: -10}}
+          animate={{opacity: 1, y: 0}}
+          transition={{ ...transition, delay: 1 }}
           className="text-lg sm:text-xl lg:text-2xl mt-4 text-(--text-secondary)!">
             A Full Stack Web developer
           </motion.h2>
 
         <motion.div
-        initial={{height: 0, overflow: "hidden"}}
-        animate={{height: "auto"}}
-        transition={{ duration: 1, delay: 1.5 }}
+        initial={{opacity: 0, overflow: "hidden",  y: -10}}
+        animate={{opacity: 1,  y: 0}}
+        transition={{ ...transition, delay: 1.5 }}
         className="flex flex-wrap justify-center md:justify-start gap-2 items-center mt-6 sm:mt-8">
           <h1 className="flex items-center text-lg sm:text-xl font-bold">
             From
@@ -45,9 +51,9 @@ function Hero() {
         </motion.div>
 
         <motion.p
-        initial={{height: 0, overflow: 'hidden'}}
-        animate={{height: "auto"}}
-        transition={{ duration: 1, delay: 2 }}
+        initial={{opacity: 0, overflow: 'hidden', y: -10}}
+        animate={{opacity: 1,  y: 0}}
+        transition={{ ...transition, delay: 2 }}
         className="text-base sm:text-lg mt-4">
           I build web experiences that matter.
         </motion.p>
@@ -55,9 +61,9 @@ function Hero() {
 
       <section className="w-full md:w-1/2 flex justify-center items-center mt-10 md:mt-0">
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 0.5 }}
+            initial={{ opacity: 0, x: 10 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ ...transition, delay: 0.5 }}
             className="sm:h-[320px] lg:h-[450px] w-[245px] bg-[#ffffff0a] backdrop-blur-sm border border-(--card-border-color) rounded-2xl overflow-hidden shadow-2xl/50 shadow-[0_20px_60px_rgba(0,0,0,0.45)] ring-1 ring-[#3fffd81a]"
           >
             <img

@@ -1,20 +1,27 @@
+import { ReactLenis, useLenis } from "lenis/react";
 import { lazy, Suspense, useEffect, useRef, useState } from "react";
 import "./App.css";
 import FloatingLines from "./components/FloatingLines";
 import Navigation from "./components/Navigation/Navigation";
-import Hero from "./components/Hero/Hero";
-import AboutMe from "./components/AboutMe/AboutMe";
-import Frontend from "./components/Frontend/Frontend";
-import Backend from "./components/Backend/Backend";
-import MobileDev from "./components/MobileDev/MobileDev";
-import Iot from "./components/Iot/Iot";
-import Tools from "./components/Tools/Tools";
-import { ReactLenis, useLenis } from "lenis/react";
 import type { LenisRef } from "lenis/react";
 import { cancelFrame, frame, useScroll, useTransform } from "framer-motion";
+import Footer from "./components/Footer/Footer";
+import { motion, type Transition } from "motion/react";
+const AboutMe = lazy(() => import("./components/AboutMe/AboutMe"));
+const Frontend = lazy(() => import("./components/Frontend/Frontend"));
+const Backend = lazy(() => import("./components/Backend/Backend"));
+const MobileDev = lazy(() => import("./components/MobileDev/MobileDev"));
+const Iot = lazy(() => import("./components/Iot/Iot"));
+const Tools = lazy(() => import("./components/Tools/Tools"));
+const Hero = lazy(() => import("./components/Hero/Hero"));
 const Project = lazy(() => import("./components/Project/Project"));
 const Contact = lazy(() => import("./components/Contact/Contact"));
-import Footer from "./components/Footer/Footer";
+
+const transition: Transition = {
+  type: "spring",
+  duration: 1,
+  delay: 0.3,
+};
 
 function App() {
   const [scrolled, setScrolled] = useState(false);
@@ -127,7 +134,9 @@ function App() {
               xl:px-24 w-full z-10 absolute top-0"
             >
               <section ref={heroRef} className="min-h-screen w-full">
+              <Suspense fallback={<div>Loading ...</div>}>
                 <Hero />
+              </Suspense>
               </section>
 
               <section ref={aboutRef} className="min-h-screen w-full mt-24">
@@ -142,14 +151,18 @@ function App() {
                  flex flex-col"
               >
                 <Suspense fallback={<div>Loading ...</div>}>
-                  <div className="flex flex-col text-center">
+                  <motion.div
+                  initial={{ opacity: 0, y: 10}}
+                  whileInView={{ opacity: 1, y: 0}}
+                  transition={transition}
+                  className="flex flex-col text-center">
                     <h1 className="text-3xl sm:text-4xl font-medium">
                       What I bring to the table
                     </h1>
                     <p className="text-base sm:text-lg mt-2">
                       Tools are important, but understanding them matters more.
                     </p>
-                  </div>
+                  </motion.div>
 
                   <div className="grow flex mt-8">
                     <Frontend />
@@ -192,7 +205,11 @@ function App() {
               </section>
 
               <section ref={contactRef} className="w-full mt-24 px-4">
-                <div className="flex flex-col text-center">
+                <motion.div 
+                initial={{ opacity: 0, y: 10}}
+                whileInView={{ opacity: 1, y: 0}}
+                transition={transition}
+                className="flex flex-col text-center">
                   <h1 className="text-3xl sm:text-4xl font-medium">
                     Let's Build Something Meaningful Together
                   </h1>
@@ -200,7 +217,7 @@ function App() {
                     If you're looking for someone who's hungry to grow and
                     serious about building, let's talk.
                   </p>
-                </div>
+                </motion.div>
 
                 <div className="lg:h-screen w-full flex mt-8">
                   <Contact />

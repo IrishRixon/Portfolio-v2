@@ -1,4 +1,4 @@
-import { motion, MotionValue } from "motion/react";
+import { motion, MotionValue, type Transition } from "motion/react";
 
 interface Project {
   title: string;
@@ -18,6 +18,8 @@ const quizAITechUsed: string[] = [
   "TypeScript",
   "Tailwind CSS",
   "Prime React",
+  "HTML",
+  "CSS",
 ];
 
 const pawFileTechUsed: string[] = [
@@ -27,9 +29,17 @@ const pawFileTechUsed: string[] = [
   "Javascript",
   "MongoDB",
   "PrimeNG",
+  "HTML",
+  "CSS",
 ];
 
-const portfolioV1: string[] = ["Angular", "Prime NG"];
+const portfolioV1: string[] = [
+  "Angular",
+  "Prime NG",
+  "Tailwind",
+  "HTML",
+  "CSS",
+];
 
 const projects: Project[] = [
   {
@@ -72,10 +82,21 @@ interface Props {
   horizontalScrollRef: any;
 }
 
+const transition: Transition = {
+  type: "spring",
+  duration: 1,
+  delay: 0.3,
+};
+
 function Project({ horizontalScroll, horizontalScrollRef }: Props) {
   return (
     <div className="sticky top-16 min-h-screen lg:min-h-0 lg:h-(--projects-height) w-full lg:mt-24 flex flex-col">
-      <header className="flex flex-col">
+      <motion.header
+        initial={{ opacity: 0, y: 10 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ ...transition }}
+        className="flex flex-col"
+      >
         <h1 className="text-3xl sm:text-4xl font-medium lg:text-center mt-4 text-center">
           Projects
         </h1>
@@ -83,7 +104,7 @@ function Project({ horizontalScroll, horizontalScrollRef }: Props) {
           Every project is a story of problem-solving and learning. Here's I
           built and what it taught me.
         </p>
-      </header>
+      </motion.header>
 
       <motion.article
         style={{ x: horizontalScroll }}
@@ -94,7 +115,10 @@ function Project({ horizontalScroll, horizontalScrollRef }: Props) {
       >
         {projects.map((project) => {
           return (
-            <a
+            <motion.a
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={transition}
               href={project.link}
               target="_blank"
               className="text-start group transition-colors duration-300
@@ -168,7 +192,7 @@ function Project({ horizontalScroll, horizontalScrollRef }: Props) {
                   <p className="mt-2 ps-8 text-sm!">{project.outcome}</p>
                 </div>
               </section>
-            </a>
+            </motion.a>
           );
         })}
       </motion.article>

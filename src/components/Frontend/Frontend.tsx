@@ -1,6 +1,8 @@
 
+import { transition } from "@/Motion/SkillMotion";
 import Skill from "./Skill";
 import SkillGroup from "./SkillGroup";
+import { motion } from "motion/react";
 
 function Frontend() {
   return (
@@ -19,7 +21,10 @@ function Frontend() {
           justify-center
           lg:justify-start"
       >
-        <h2
+        <motion.h2
+        initial={{ opacity: 0, x: -10}}
+        whileInView={{ opacity: 1, x: 0}}
+        transition={transition}
           className="text-2xl
             sm:text-3xl
             font-medium
@@ -29,7 +34,7 @@ function Frontend() {
             lg:top-24"
         >
           Frontend Development
-        </h2>
+        </motion.h2>
       </section>
 
       <section

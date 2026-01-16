@@ -1,7 +1,15 @@
+import { transition } from "@/Motion/SkillMotion";
+import { motion } from "motion/react";
+
 function Contact() {
   return (
     <div className="w-full lg:flex-row flex-col h-full lg:pt-14 pb-8 flex gap-8">
-      <section className="w-full lg:w-1/2 lg:h-full">
+      <motion.section
+        initial={{ opacity: 0, x: -10 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={transition}
+        className="w-full lg:w-1/2 lg:h-full"
+      >
         <div className="p-6 lg:p-10 lg:min-w-full h-full rounded-2xl bg-(--card-bg) backdrop-blur-xl border border-(--card-border) shadow-2xl/50 shadow-[0_20px_60px_rgba(0,0,0,0.45)] ring-1 ring-(--card-ring)">
           <h2 className="text-xl sm:text-2xl font-[roboto]! font-semibold">
             Send a Message
@@ -52,10 +60,15 @@ function Contact() {
             </button>
           </form>
         </div>
-      </section>
+      </motion.section>
 
       <section className="w-full lg:w-1/2 h-full gap-8 lg:gap-4 flex flex-col">
-        <div className="flex flex-col p-5 w-full h-1/3 rounded-2xl bg-(--card-bg) backdrop-blur-xl border border-(--card-border) shadow-2xl/50 shadow-[0_20px_60px_rgba(0,0,0,0.45)] ring-1 ring-(--card-ring)">
+        <motion.div
+          className="flex flex-col p-5 w-full h-1/3 rounded-2xl bg-(--card-bg) backdrop-blur-xl border border-(--card-border) shadow-2xl/50 shadow-[0_20px_60px_rgba(0,0,0,0.45)] ring-1 ring-(--card-ring)"
+          initial={{ opacity: 0, x: 10 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={transition}
+        >
           <h2 className="text-xl sm:text-2xl font-[roboto]! font-semibold">
             Get in Touch
           </h2>
@@ -84,9 +97,14 @@ function Contact() {
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
 
-        <div className="flex flex-col p-5 w-full h-1/3 rounded-2xl bg-(--card-accent)/35 backdrop-blur-xl border border-(--card-border) shadow-2xl/50 shadow-[0_20px_60px_rgba(0,0,0,0.45)] ring-1 ring-(--card-ring)">
+        <motion.div
+          initial={{ opacity: 0, x: 10 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={transition}
+          className="flex flex-col p-5 w-full h-1/3 rounded-2xl bg-(--card-accent)/35 backdrop-blur-xl border border-(--card-border) shadow-2xl/50 shadow-[0_20px_60px_rgba(0,0,0,0.45)] ring-1 ring-(--card-ring)"
+        >
           <h2 className="text-xl sm:text-2xl font-[roboto]! font-semibold">
             Download Resume
           </h2>
@@ -105,8 +123,12 @@ function Contact() {
             </span>
             Download CV
           </a>
-        </div>
-        <div className="flex flex-col p-5 w-full h-1/3 rounded-2xl bg-(--card-bg) backdrop-blur-xl border border-(--card-border) shadow-2xl/50 shadow-[0_20px_60px_rgba(0,0,0,0.45)] ring-1 ring-(--card-ring)">
+        </motion.div>
+        <motion.div
+        initial={{ opacity: 0, x: 10}}
+        whileInView={{ opacity: 1, x: 0}}
+        transition={transition}
+        className="flex flex-col p-5 w-full h-1/3 rounded-2xl bg-(--card-bg) backdrop-blur-xl border border-(--card-border) shadow-2xl/50 shadow-[0_20px_60px_rgba(0,0,0,0.45)] ring-1 ring-(--card-ring)">
           <h2 className="text-xl sm:text-2xl font-[roboto]! font-semibold">
             Connect with Me
           </h2>
@@ -138,7 +160,7 @@ function Contact() {
               ></i>
             </a>
           </div>
-        </div>
+        </motion.div>
       </section>
     </div>
   );

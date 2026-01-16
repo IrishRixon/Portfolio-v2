@@ -1,3 +1,10 @@
+import { motion, type Transition } from "motion/react";
+
+const transition: Transition = {
+  type: "spring",
+  duration: 1,
+  delay: 0.3
+}
 
 function AboutMe() {
   return (
@@ -7,11 +14,18 @@ function AboutMe() {
      shadow-2xl/50 shadow-[0_20px_60px_rgba(0,0,0,0.45)] ring-1 ring-(--card-ring) 
      p-4 sm:p-6 md:p-8 lg:p-10"
     >
-      <h1 className="text-3xl sm:text-4xl font-medium text-center">Who I am</h1>
+      <motion.h1 
+      initial={{ opacity: 0, y: 10}}
+      whileInView={{ opacity: 1, y: 0}}
+      transition={{...transition}}
+      className="text-3xl sm:text-4xl font-medium text-center">Who I am</motion.h1>
 
       <article className="md:grow flex flex-col lg:flex-row gap-8 lg:gap-12 items-center">
         <div className="w-full lg:w-1/2 md:h-full flex md:items-center justify-center">
-          <img
+          <motion.img
+          initial={{ opacity: 0, x: -10}}
+          whileInView={{ opacity: 1, x: 0}}
+          transition={{...transition}}
             className="w-full
               max-w-[280px]
               sm:max-w-[360px]
@@ -26,7 +40,10 @@ function AboutMe() {
         </div>
 
         <div className="w-full lg:w-1/2 h-full flex md:items-center justify-center">
-          <p
+          <motion.p
+          initial={{ opacity: 0, x: 10}}
+          whileInView={{ opacity: 1, x: 0}}
+          transition={{...transition}}
             className="text-base
               sm:text-lg
               leading-relaxed
@@ -45,7 +62,7 @@ function AboutMe() {
             <br />
             I’m currently seeking opportunities where I can grow as a developer
             and contribute to meaningful products that make a real impact.
-          </p>
+          </motion.p>
         </div>
       </article>
     </div>
