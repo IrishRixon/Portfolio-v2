@@ -1,4 +1,4 @@
-import { AnimatePresence, motion, type Transition } from "motion/react";
+import { motion, type Transition } from "motion/react";
 import RotatingText from "../RotatingText";
 
 
